@@ -4,7 +4,7 @@ import React, { useEffect, useState, useDebugValue, FC, PropsWithChildren } from
 import ReactDOM from "react-dom";
 import './App.css';
 import TreeViewWrapper from "./components/_spikes/tvwrapper";
-import DynamicTree from "./components/_spikes/dynamic_tree/dynamic_tree";
+import DynamicTree from "./components/_spikes/dynamic_tree/dynamic_tree.jsx";
 import ListView from './components/listview'
 import { useQuery } from "react-query";
 import TreeView from "@material-ui/lab/TreeView";
@@ -61,7 +61,10 @@ function App() {
   */
 //#endregion
   
-
+  useEffect(() => {
+    //effect
+  }, // [ values under watch ]
+  )
   const [GetSelectedTVFolder, SetSelectedTVFolder] = useState('');//this is the function that is called when a folder is selected in TreeView
   //it is used by ListView, as it updates every time a new folder is selected
 
