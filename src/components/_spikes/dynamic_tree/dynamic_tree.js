@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, useContext } from "react";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -9,10 +10,12 @@ import fetchChildNodes from "./fetchChildNodes_Test";
 // UPDATE: i think i did it...
 
 //This componenet acts as a "wrapper"
-//It works by making *this* type of component, wich has a TreeView, with TreeItems.
+//It works by making *this* type of component, which has a TreeView, with TreeItems.
 // When "expanded", it makes a "child-wrapper", that contains a TreeView + TreeItems
 function DynamicTree(props){
     //#region TreeViewProps
+    console.log(props.fuckUnidirectionalDataFlow);
+    console.log(props.fuckUnidirectionalDataFlow());
     const [expanded, setExpanded] = useState([]);
     const multiSelect = false;
     const handleToggle = (event, nodeIds) => { //this is called every time a TreeItem is "toggled"
@@ -22,7 +25,7 @@ function DynamicTree(props){
         console.log("nodes: "+nodeIds+" expanded: "+expanded)
         const expandingNodes = nodeIds.filter(i => !expanded.includes(i)); //cheks if the node was already expanded...
         if (nodeIds.length > 1) {
-            console.log("ITS HAPPENING! "+nodeIds)
+            alert("ITS HAPPENING! "+nodeIds);
         }//in case that there is EVER more than one node in "expanded"
         const thisNode = expandingNodes[0];
         if (thisNode) //if node is un-expanded
@@ -33,6 +36,7 @@ function DynamicTree(props){
           console.log("mapping childnodes: " + getChildWrappers)
         }
     };
+    
     function mapNode(nodesToMap){
         return (nodesToMap.map(node => (
             <DynamicTree key={node.id} {...node} /> 
@@ -54,7 +58,7 @@ function DynamicTree(props){
         <TreeView {...treeViewProps} 
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />} >
-            <TreeItem nodeId={props.id} label={props.name}>
+            <TreeItem nodeId={props.id} label={props.name} fuckUnidirectionalDataFlow={props.fuckUnidirectionalDataFlow} onLabelClick={props.fuckUnidirectionalDataFlow(props.name)}>
                 {(getChildWrappers && getChildWrappers) || [<div key="placeholder" />]}
             </TreeItem>
         </TreeView>

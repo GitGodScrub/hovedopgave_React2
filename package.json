@@ -9,10 +9,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react-hooks": "0.0.0-7f28234f8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-query": "^1.5.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "use-state-with-callback": "^1.0.18"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,8 +29,14 @@
       "jsx-a11y"
     ],
     "rules": {
+      "jsx-a11y/accessible-emoji": "off",
       "no-console": "off",
-      "jsx-a11y/accessible-emoji": "off"
+      "no-unused-vars": [
+        "error",
+        {
+          "args": "after-used"
+        }
+      ]
     }
   },
   "browserslist": {
@@ -41,5 +50,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,16 +1,24 @@
-import React, { useEffect, useState, FC, PropsWithChildren } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/accessible-emoji */
+import React, { useEffect, useState, useDebugValue, FC, PropsWithChildren } from "react";
 import ReactDOM from "react-dom";
 import './App.css';
+import TreeViewWrapper from "./components/_spikes/tvwrapper";
+import DynamicTree from "./components/_spikes/dynamic_tree/dynamic_tree";
+import ListView from './components/listview'
 import { useQuery } from "react-query";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MyTreeItem from './components/delayed_collapsable_treeview/index';
-import TreeViewWrapper from "./components/_spikes/tvwrapper";
 import { TVFactory } from "./components/_spikes/tvfactory/TVFactory";
-import DynamicTree from "./components/_spikes/dynamic_tree/dynamic_tree";
+import { Checkbox, ExpansionPanel, ExpansionPanelSummary,ExpansionPanelDetails, FormControlLabel } from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
+import TestListView from "./components/_spikes/testlistview/TestListView";
+//import { GlobalContext } from './context/GlobalContext';
 
+//#region comments
 // <TreeView
 // children=node //The content of the component.
 // expanded=Array<string>  //Expanded node ids. (Controlled)
@@ -20,11 +28,11 @@ import DynamicTree from "./components/_spikes/dynamic_tree/dynamic_tree";
 // selected=Array<string> | string //Selected node ids. (Controlled) 
 // // When multiSelect is true this takes an array of strings; 
 // // when false (default) a string.</string></string>
-
+//#endregion
 
 function App() {
   const [GetTVWrapper, SetTVWrapper] = useState(TreeViewWrapper());
-
+//#region comments
   // const [myTreeView, setMyTreeView] = useState(TreeView);
   //Here i want to use useState, in order to be able to acess the container.
   // without access to the container, there can be no interaction with the children either
@@ -51,17 +59,36 @@ function App() {
   }
   //This is making errors (28-05)
   */
-
-
-
-  
+//#endregion
   
 
+  const [GetSelectedTVFolder, SetSelectedTVFolder] = useState('');//this is the function that is called when a folder is selected in TreeView
+  //it is used by ListView, as it updates every time a new folder is selected
+
+  //if the some of the child containers are having problems fitting in, then its possible to fix it by setting their "flex" value to a heigher value (relative to its siblings)
   return (
-    <div>
-      <h1>Hello world!</h1>
-      {[<DynamicTree id="1" name="Applications"/>] || [<div key="placeholder" />]}
+    <>
+    {/* <GlobalContext> */}
+    <h1>Hello world! 😊</h1>
+    <TestListView />
+    <div class="Main-container">
+
+      <div id="TreeViewContainer" class="Child-container" style={{flex: 1, backgroundColor: "yellow"}}>
+        <h1>TreeView Here!</h1>
+        {[<DynamicTree id="1" name="Applications" fuckUnidirectionalDataFlow={SetSelectedTVFolder} /*onLabelClick={SetSelectedTVFolder(props.name)*//>] || [<div key="placeholder" />]}
+      </div>
+
+      <div id="ListViewContainer" class="Child-container" style={{flex: 1, backgroundColor: "red"}}>
+        <ListView fuckUnidirectionalDataFlow={GetSelectedTVFolder} />
+        <h1>ListView Here!</h1>
+      </div>
+
+      <div id="KontrolpanelContainer" class="Child-container" style={{flex: 1, backgroundColor: "blue"}}>
+        <h1>Kontrolpanel Here!</h1>
+      </div>
     </div>
+    {/* </GlobalContext> */}
+    </>
   );
 }
 //<DynamicTree id="1" name="Applications" /> {/* id and name is the "root" node */}
