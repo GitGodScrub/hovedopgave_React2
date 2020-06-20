@@ -60,14 +60,19 @@ function App() {
   //This is making errors (28-05)
   */
 //#endregion
-  
-  useEffect(() => {
-    //effect
-  }, // [ values under watch ]
-  )
   const [GetSelectedTVFolder, SetSelectedTVFolder] = useState('');//this is the function that is called when a folder is selected in TreeView
   //it is used by ListView, as it updates every time a new folder is selected
-
+  
+  
+  const [GetExpState, SetExpState] = useState();
+  function handleSelect(e) {
+    console.log(e);
+    console.log(e.target);
+    alert(e);
+  };
+  useEffect(() => {
+    alert();
+  }, [])
   //if the some of the child containers are having problems fitting in, then its possible to fix it by setting their "flex" value to a heigher value (relative to its siblings)
   return (
     <>
@@ -78,15 +83,15 @@ function App() {
 
       <div id="TreeViewContainer" class="Child-container" style={{flex: 1, backgroundColor: "yellow"}}>
         <h1>TreeView Here!</h1>
-        {[<DynamicTree id="1" name="Applications" fuckUnidirectionalDataFlow={SetSelectedTVFolder} /*onLabelClick={SetSelectedTVFolder(props.name)*//>] || [<div key="placeholder" />]}
+        {[<DynamicTree id="1" name="Applications" setListViewFolder={} /*onLabelClick={SetSelectedTVFolder(props.name)*//>] || [<div key="placeholder" />]}
       </div>
-
+      {/* Fordi ListView er dependent af TreeView, kunne det være nice hvis den var et barn af TreeView! Uheldigvis kan dette ikke lade sig gøre, da det er så messy */}
       <div id="ListViewContainer" class="Child-container" style={{flex: 1, backgroundColor: "red"}}>
-        <ListView fuckUnidirectionalDataFlow={GetSelectedTVFolder} />
+        <ListView />
         <h1>ListView Here!</h1>
       </div>
 
-      <div id="KontrolpanelContainer" class="Child-container" style={{flex: 1, backgroundColor: "blue"}}>
+      <div id="KontrolpanelContainer" class="Child-container" getListViewSelected={} style={{flex: 1, backgroundColor: "blue"}}>
         <h1>Kontrolpanel Here!</h1>
       </div>
     </div>
@@ -96,6 +101,16 @@ function App() {
 }
 //<DynamicTree id="1" name="Applications" /> {/* id and name is the "root" node */}
 export default App;
+/*
+  TODO
+Ryd op i dette, og gem det som et "seperat" projekt, hvor jeg viser hvad jeg *prøvede* at gøre
+Derefter lave noget der virker, uden så meget pure-functional-stateless-components
+
+TreeView skal vise "rigtige" mapper
+ListView skal vise og kunne "selecte" filer i en mappe
+*/
+
+
 //TreeView setExpanded guide:
 //https://stackoverflow.com/questions/57742324/how-to-programmatically-expand-or-collapse-tree-item-in-material-ui
 

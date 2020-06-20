@@ -14,8 +14,7 @@ import fetchChildNodes from "./fetchChildNodes_Test";
 // When "expanded", it makes a "child-wrapper", that contains a TreeView + TreeItems
 function DynamicTree(props){
     //#region TreeViewProps
-    console.log(props.fuckUnidirectionalDataFlow);
-    console.log(props.fuckUnidirectionalDataFlow());
+
     const [expanded, setExpanded] = useState([]);
     const multiSelect = false;
     const handleToggle = (event, nodeIds) => { //this is called every time a TreeItem is "toggled"
@@ -58,7 +57,7 @@ function DynamicTree(props){
         <TreeView {...treeViewProps} 
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />} >
-            <TreeItem nodeId={props.id} label={props.name} fuckUnidirectionalDataFlow={props.fuckUnidirectionalDataFlow} onLabelClick={props.fuckUnidirectionalDataFlow(props.name)}>
+            <TreeItem nodeId={props.id} label={props.name}>
                 {(getChildWrappers && getChildWrappers) || [<div key="placeholder" />]}
             </TreeItem>
         </TreeView>
