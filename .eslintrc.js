@@ -246,7 +246,7 @@ module.exports = {
         /*"object-curly-spacing": [
             "error",
             "never",
-            {"arraysInObjects": true,
+            {"arraysInObjects": true, 
             "objectsInObjects": true
         }
         ], - Dont touch, unles you got the time */

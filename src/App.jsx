@@ -17,8 +17,6 @@ import MyTreeItem from './components/_spikes/delayed_collapsable_treeview/index'
 import { TVFactory } from "./components/_spikes/tvfactory/TVFactory";
 import { Checkbox, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, FormControlLabel } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-import { ListViewV2 } from "./components/listview2/ListViewV2";
-import { TreeViewV2 } from "./components/TreeViewV2";
 
 function App() { 
 //#region comments

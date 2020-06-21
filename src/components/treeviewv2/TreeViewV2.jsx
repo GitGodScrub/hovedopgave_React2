@@ -4,7 +4,7 @@ import TreeItem from "@material-ui/lab/TreeItem";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-export function TreeViewV2(props) {
+function TreeViewV2(props) {
   return (
     <TreeView
       defaultCollapseIcon={<ExpandMoreIcon />}
@@ -21,3 +21,4 @@ export function TreeViewV2(props) {
     </TreeView>
   );
 }
+export default TreeViewV2;

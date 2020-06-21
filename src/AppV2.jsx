@@ -1,6 +1,4 @@
-// prøv at implementere denne mens jeg er væk
-/* eslint-disable no-var */
-/* eslint-disable no-unused-vars */
+
 import React from "react";
 import './App.css';
 import DynamicTreeView from "./components/dynamictreeview";
@@ -18,13 +16,13 @@ import MyTreeItem from './components/_spikes/delayed_collapsable_treeview/index'
 import { TVFactory } from "./components/_spikes/tvfactory/TVFactory";
 import { Checkbox, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, FormControlLabel } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-import { ListViewV2 } from "./components/listview2/ListViewV2";
-import { TreeViewV2 } from "./components/TreeViewV2";
+import ListViewV2 from "./components/listviewv2";
+import TreeViewV2 from "./components/treeviewv2";
 import fetchChildNodes_Dummy from "./components/dynamictreeview/support/fetchChildNodes_Dummy";
 import fetchChildren_Dummy from "./components/listview/support/fetchChildren/fetchChildren_Dummy";
 
 function App() { 
-//#region comments
+//#region comments 
   // const [myTreeView, setMyTreeView] = useState(TreeView);
   //Here i want to use useState, in order to be able to acess the container.
   // without access to the container, there can be no interaction with the children either
@@ -52,6 +50,7 @@ function App() {
 
   //placeholder code:
   const [ currentFolder, setCurrentFolder ] = useState("");
+  // eslint-disable-next-line function-call-argument-newline
   const {data, isFetching} = useQuery("folders", fetchChildNodes_Dummy);
   //
 

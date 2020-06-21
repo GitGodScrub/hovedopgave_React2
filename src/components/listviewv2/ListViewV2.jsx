@@ -5,7 +5,7 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import mapListItems from './support/mapListItems'
-export function ListViewV2(props) {
+function ListViewV2(props) {
   return (
     <div>
       <div>current folder is: {props.currentFolder}</div>
@@ -18,3 +18,4 @@ export function ListViewV2(props) {
     </div>
   );
 }
+export default ListViewV2;
