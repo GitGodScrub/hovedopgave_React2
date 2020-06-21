@@ -37,11 +37,7 @@ function DynamicTreeView(props) {
   };
 
   const treeViewProps = {
-    defaultCollapseIcon: ExpandMoreIcon,
-    defaultExpandIcon: ChevronRightIcon,
-    // eslint-disable-next-line object-shorthand
-    expanded: expanded,
-    // eslint-disable-next-line object-shorthand
+    expanded: expanded, 
     multiSelect: multiSelect,
     onNodeToggle: handleToggle,
   }; //TODO check if this works, and delete the lines in return
@@ -55,9 +51,9 @@ function DynamicTreeView(props) {
   //Used to keep track of the "wrapper" child element
   // as using this.children, is not working
   return (
-    <TreeView
-      {...treeViewProps}
-    >
+    <TreeView {...treeViewProps} 
+        defaultCollapseIcon={<ExpandMoreIcon />}
+        defaultExpandIcon={<ChevronRightIcon />} >
       <TreeItem nodeId={props.id} label={props.name}>
         {(getChildWrappers && getChildWrappers) || [<div key="placeholder" />]}
       </TreeItem>

@@ -17,7 +17,6 @@ import MyTreeItem from './components/_spikes/delayed_collapsable_treeview/index'
 import { TVFactory } from "./components/_spikes/tvfactory/TVFactory";
 import { Checkbox, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, FormControlLabel } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-import TestListView from "./components/_spikes/testlistview/TestListView";
 
 function App() {
 //#region comments
@@ -47,7 +46,7 @@ function App() {
       class="Child-container" 
       style={{flex: 1, backgroundColor: "yellow"}}>
         <h1>TreeView Here!</h1>
-        {[<DynamicTreeView id="1" name="Applications"/>] || [<div key="placeholder" />]}
+        {[<DynamicTreeView id="1" name="Applications"/>]}
         {/* id and name is for the "root" node */}
       </div>
 

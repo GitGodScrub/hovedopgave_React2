@@ -7,11 +7,11 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import fetchChildren from './support/fetchChildren/fetchChildren_Dummy.js';
-import validateChildren from './support/validatechildren/ValidateChildren_Dummy.js';//TODO change to validateChildren
+import validateChildren from './support/validatechildren/validateChildren_Dummy.js';
 import getImplementStatusFromXml from './support/getImplementStatusFromXml/getImplementStatusFromXml_Dummy.js';
 import handleTVSelectedFolderChanged_Dummy from './support/handletvselectedfolderchanged/handleTVSelectedFolderChanged_Dummy.js';
-import mapListItems from './support/mapListItems.js';
-import useTreeViewSelectedFolder from './support/useTreeViewSelectedFolder/useTreeViewSelectedFolder_Dummy.js';
+import mapListItems from './support/mapListItems.jsx';
+import useTreeViewSelectedFolder from './support/useTreeViewSelectedFolder/useTreeViewSelectedFolder_Dummy.jsx';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
