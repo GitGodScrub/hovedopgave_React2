@@ -18,7 +18,7 @@ import { TVFactory } from "./components/_spikes/tvfactory/TVFactory";
 import { Checkbox, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, FormControlLabel } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 
-function App() {
+function App() { 
 //#region comments
   // const [myTreeView, setMyTreeView] = useState(TreeView);
   //Here i want to use useState, in order to be able to acess the container.

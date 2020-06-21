@@ -10,7 +10,7 @@ import fetchChildNodes_Dummy from "./support/fetchChildNodes_Dummy"; //TODO rena
 // If it is not able to get the Items instantly, it will make a placeholder-element in its place
 //When this component is "expanded", wrappers are inserted in "child"-TreeItems place,
 // this new wrapper will also contain a TreeView + TreeItems, so that the it can be "expanded", too.
-function DynamicTreeView(props) {
+function DynamicTreeView(props) { 
   const [ expanded, setExpanded ] = useState([]);
   const multiSelect = false;
   const handleToggle = (event, nodeIds) => {
@@ -53,7 +53,9 @@ function DynamicTreeView(props) {
   return (
     <TreeView {...treeViewProps} 
         defaultCollapseIcon={<ExpandMoreIcon />}
-        defaultExpandIcon={<ChevronRightIcon />} >
+        defaultExpandIcon={<ChevronRightIcon />}
+        onNodeSelect=
+        >
       <TreeItem nodeId={props.id} label={props.name}>
         {(getChildWrappers && getChildWrappers) || [<div key="placeholder" />]}
       </TreeItem>
