@@ -54,7 +54,7 @@ function DynamicTreeView(props) {
     <TreeView {...treeViewProps} 
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />}
-        onNodeSelect=
+        onNodeSelect={(event, value) => console.log(value)}
         >
       <TreeItem nodeId={props.id} label={props.name}>
         {(getChildWrappers && getChildWrappers) || [<div key="placeholder" />]}

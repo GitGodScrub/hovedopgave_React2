@@ -39,9 +39,9 @@ module.exports = {
         "array-callback-return": "error",
         "array-element-newline": ["error", "consistent"],
         "arrow-body-style": [
-            2,
+            1,
             "as-needed"
-        ],
+        ], /* might need to look this over again later */
         "arrow-parens": [
             2,
             "always",
@@ -283,6 +283,7 @@ module.exports = {
             {"ignore": ["class", "for", "module"]}
         ], /* TODO Expand this as needed */
         "react/prefer-stateless-function": [2, { "ignorePureComponents": false }], /* maybe change this later */
+        "react/prop-types": 1,
         "require-atomic-updates": "error",
         "require-await": "error",
         "require-unicode-regexp": "error",

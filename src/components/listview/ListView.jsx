@@ -161,8 +161,8 @@ const matchXmlStatus3 = (listItems) => {
           {/* if elemnet exist, insert it - else, use placeholder. */} 
         </FormGroup>
       </FormControl>
-      <button onClick={() => handleTVSelectedFolderChanged_Dummy(setListItems)}> DebugFakeUpdate </button>
-      <button onClick={() => handleTVSelectionChanged({}, 'C:\\Udvikler\\SOA\\FOA\\FOABKFutopRente')}> DebugForceUpdate </button>
+      {/* <button onClick={() => handleTVSelectedFolderChanged_Dummy(setListItems)}> DebugFakeUpdate </button> */}
+      {/* <button onClick={() => handleTVSelectionChanged({}, 'C:\\Udvikler\\SOA\\FOA\\FOABKFutopRente')}> DebugForceUpdate </button> */}
     </div>
   );
 }

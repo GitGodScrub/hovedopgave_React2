@@ -1,3 +1,4 @@
+// prøv at implementere denne mens jeg er væk
 /* eslint-disable no-var */
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -19,6 +20,8 @@ import { Checkbox, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails,
 import Typography from '@material-ui/core/Typography';
 import { ListViewV2 } from "./components/listview2/ListViewV2";
 import { TreeViewV2 } from "./components/TreeViewV2";
+import fetchChildNodes_Dummy from "./components/dynamictreeview/support/fetchChildNodes_Dummy";
+import fetchChildren_Dummy from "./components/listview/support/fetchChildren/fetchChildren_Dummy";
 
 function App() { 
 //#region comments
@@ -47,7 +50,11 @@ function App() {
   //it is used by ListView, as it updates every time a new folder is selected
   */
 
-  const [ currentFolder, setCurrentFolder ] = useState("");
+const [ currentFolder, setCurrentFolder ] = useState("");
+
+const {data, isFetching} = useQuery("folders", fetchChildNodes_Dummy);
+
+
   return (
   <>
     <h1>Hello world! 😊</h1>
@@ -58,7 +65,8 @@ function App() {
       class="Child-container" 
       style={{flex: 1, backgroundColor: "yellow"}}>
         <h1>TreeView Here!</h1>
-        {<DynamicTreeView id="1" onNodeSelect={setCurrentFolder} name="Applications"/> || <div key="placeholder" />}
+        {/* {<DynamicTreeView id="1" onNodeSelect={setCurrentFolder} name="Applications"/> || <div key="placeholder" />} */}
+        {isFetching ? <div>fetching...</div> : <TreeViewV2 folders={data} onFolderClick={setCurrentFolder}/>}
         {/* id and name is for the "root" node */}
       </div>
 
@@ -67,7 +75,7 @@ function App() {
       class="Child-container" 
       style={{flex: 1, backgroundColor: "red"}}>
         <h1>ListView Here!</h1>
-        <ListView />
+        <ListViewV2 currentFolder={currentFolder} folderItems={fetchChildren_Dummy()}/>
       </div>
 
       <div 
