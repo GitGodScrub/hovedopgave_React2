@@ -46,7 +46,7 @@ function App() {
       class="Child-container" 
       style={{flex: 1, backgroundColor: "yellow"}}>
         <h1>TreeView Here!</h1>
-        {[<DynamicTreeView id="1" name="Applications"/>]}
+        {[<DynamicTreeView id="1" name="Applications"/>] || [<div key="placeholder" />]}
         {/* id and name is for the "root" node */}
       </div>
 
