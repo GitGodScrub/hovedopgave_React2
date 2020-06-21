@@ -204,12 +204,11 @@ module.exports = {
         "no-shadow": [
             1,
             { "builtinGlobals": true,
-            
-            "allow": ["done"]} /*"hoist": "all",*/
+            "allow": ["done", "event"]} /*"hoist": "all",*/
         ], /* I might need to check up on this */
         "no-tabs": "error",
         "no-template-curly-in-string": "error",
-        "no-ternary": "error",
+        "no-ternary": 1,
         "no-throw-literal": "error",
         "no-trailing-spaces": 0,
         "no-undef-init": 1,
@@ -219,12 +218,13 @@ module.exports = {
         "no-unneeded-ternary": "error",
         "no-unreachable": 1,
         /*"no-unreachable-loop": "error", not supported*/
-        "no-unused-expressions": "error",
+        "no-unused-expressions": 1,
+        "no-unused-vars": 0, /* Stop spamming me pls */
         "no-use-before-define": [
             2,
             { "functions": false,
             "classes": true,
-            "variables": false /* varibles is broken */ }
+            "variables": false } /* varibles is broken */
         ],
         /*"no-useless-backreference": "error", not supported*/
         "no-useless-call": "error",
@@ -283,7 +283,12 @@ module.exports = {
             {"ignore": ["class", "for", "module"]}
         ], /* TODO Expand this as needed */
         "react/prefer-stateless-function": [2, { "ignorePureComponents": false }], /* maybe change this later */
-        "react/prop-types": 1,
+        "react/prop-types": 0, /* Fix: This is not working, lol */
+        "react/jsx-key": 0, /* FIX later: Dont care right now */
+        "react/jsx-wrap-multilines": [
+                2,
+                { "declaration": "parens"}
+        ],
         "require-atomic-updates": "error",
         "require-await": "error",
         "require-unicode-regexp": "error",

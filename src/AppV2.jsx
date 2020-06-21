@@ -50,10 +50,10 @@ function App() {
   //it is used by ListView, as it updates every time a new folder is selected
   */
 
-const [ currentFolder, setCurrentFolder ] = useState("");
-
-const {data, isFetching} = useQuery("folders", fetchChildNodes_Dummy);
-
+  //placeholder code:
+  const [ currentFolder, setCurrentFolder ] = useState("");
+  const {data, isFetching} = useQuery("folders", fetchChildNodes_Dummy);
+  //
 
   return (
   <>
@@ -65,9 +65,8 @@ const {data, isFetching} = useQuery("folders", fetchChildNodes_Dummy);
       class="Child-container" 
       style={{flex: 1, backgroundColor: "yellow"}}>
         <h1>TreeView Here!</h1>
-        {/* {<DynamicTreeView id="1" onNodeSelect={setCurrentFolder} name="Applications"/> || <div key="placeholder" />} */}
-        {isFetching ? <div>fetching...</div> : <TreeViewV2 folders={data} onFolderClick={setCurrentFolder}/>}
-        {/* id and name is for the "root" node */}
+        {(isFetching && <div>fetching...</div>) || [<TreeViewV2 folders={data} onFolderClick={setCurrentFolder} />]}
+        {/* The same as this: {isFetching ? <div>fetching...</div> : <TreeViewV2 folders={data} onFolderClick={setCurrentFolder} />} */}
       </div>
 
       <div 

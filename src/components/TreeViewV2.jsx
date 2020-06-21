@@ -12,7 +12,11 @@ export function TreeViewV2(props) {
       onNodeSelect={(event, value) => console.log(event)}
     >
       {props.folders.children.map((folder) => (
-        <TreeItem nodeId={folder.id} onClick={() => props.onFolderClick(folder.name)} label={folder.name}></TreeItem>
+        <TreeItem 
+          nodeId={folder.id} 
+          onClick={() => props.onFolderClick(folder.name)} 
+          label={folder.name}>
+        </TreeItem>
       ))}
     </TreeView>
   );
