@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */ //TODO remove this line
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
@@ -37,7 +35,9 @@ function DynamicTreeView(props) {
   };
 
   const treeViewProps = {
+    // eslint-disable-next-line object-shorthand
     expanded: expanded, 
+    // eslint-disable-next-line object-shorthand
     multiSelect: multiSelect,
     onNodeToggle: handleToggle,
   }; //TODO check if this works, and delete the lines in return

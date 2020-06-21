@@ -75,7 +75,7 @@ module.exports = {
         "consistent-this": "error",
         "curly": "error",
         "default-case": "error",
-        "default-case-last": "error",
+        /*"default-case-last": "error", not supported*/
         "default-param-last": "error",
         "dot-location": "error",
         "dot-notation": "error",
@@ -173,7 +173,7 @@ module.exports = {
         "no-lone-blocks": "error",
         "no-lonely-if": "error",
         "no-loop-func": "error",
-        "no-loss-of-precision": "error",
+        /*"no-loss-of-precision": "error", not supported*/
         "no-magic-numbers": "off",
         "no-mixed-operators": "error",
         "no-multi-assign": "error",
@@ -189,9 +189,9 @@ module.exports = {
         "no-octal-escape": "error",
         "no-param-reassign": "error",
         "no-plusplus": "error",
-        "no-promise-executor-return": "error",
+        /*"no-promise-executor-return": "error", not supported*/
         "no-proto": "error",
-        "no-restricted-exports": "error",
+        /*"no-restricted-exports": "error", not supported*/
         "no-restricted-globals": "error",
         "no-restricted-imports": "error",
         "no-restricted-properties": "error",
@@ -218,7 +218,7 @@ module.exports = {
         "no-unmodified-loop-condition": "error",
         "no-unneeded-ternary": "error",
         "no-unreachable": 1,
-        "no-unreachable-loop": "error",
+        /*"no-unreachable-loop": "error", not supported*/
         "no-unused-expressions": "error",
         "no-use-before-define": [
             2,
@@ -226,7 +226,7 @@ module.exports = {
             "classes": true,
             "variables": false /* varibles is broken */ }
         ],
-        "no-useless-backreference": "error",
+        /*"no-useless-backreference": "error", not supported*/
         "no-useless-call": "error",
         "no-useless-computed-key": "error",
         "no-useless-concat": "error",

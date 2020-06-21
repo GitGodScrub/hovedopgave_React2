@@ -44,3 +44,8 @@ function fetchChildNodes_Dummy(id) {
     });
 }
 export default fetchChildNodes_Dummy;
+//this was tricky to make, so i used this:
+//https://stackoverflow.com/questions/40029867/trying-to-implement-a-simple-promise-in-reactjs
+//https://react-cn.github.io/react/tips/if-else-in-JSX.html
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+//todo Delete documentation
