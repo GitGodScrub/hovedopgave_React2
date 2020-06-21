@@ -9,7 +9,7 @@ function MyTreeItem(props) {
   const [expanded, setExpanded] = React.useState([]);
 
   function fetchChildNodes(id) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           children: [

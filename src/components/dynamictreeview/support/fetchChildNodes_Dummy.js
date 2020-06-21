@@ -1,8 +1,7 @@
-/* eslint-disable eqeqeq */
-export default function fetchChildNodes(id) {
+function fetchChildNodes_Dummy(id) {
     console.log("fetchChildNodes activated with: "+id)
-    return new Promise(resolve => {
-        setTimeout(() =>{
+    return new Promise((resolve) => {
+        setTimeout(() =>{//custom delay, to simulate API-delay, time (in ms) declared after this function
             if (id == 2) {
             console.log("fetchChildNodes option 1")
                 resolve(
@@ -41,10 +40,7 @@ export default function fetchChildNodes(id) {
                         }
                     ]});}
         },
-        //this was tricky to make, so i used this:
-        //https://stackoverflow.com/questions/40029867/trying-to-implement-a-simple-promise-in-reactjs
-        //https://react-cn.github.io/react/tips/if-else-in-JSX.html
-        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
         400);//custom delay, to simulate API-delay
     });
 }
+export default fetchChildNodes_Dummy;
