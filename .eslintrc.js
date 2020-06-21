@@ -251,7 +251,7 @@ module.exports = {
         }
         ], - Dont touch, unles you got the time */
         /*"object-property-newline": "error", - Dont touch, unles you got the time */
-        "object-shorthand": "error", /* VERY SPECIAL */
+        "object-shorthand": 1, /* VERY SPECIAL */
         "one-var": 0,
         "one-var-declaration-per-line": 0,
         "operator-assignment": "error",

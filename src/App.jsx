@@ -35,7 +35,15 @@ function App() {
   //Alternatively. i could use an API, so that the (PURE) components could send out data, (BUT THEN, WHY USE THEM?)
   //(CHECK IF USEFUL: saw som code in the old SecondTree, in Typescript, that might help, too.)
 //#endregion
-
+  
+/*
+  useEffect(() => {
+    //effect
+  }, // [ values under watch ]
+  )
+  const [GetSelectedTVFolder, SetSelectedTVFolder] = useState('');//this is the function that is called when a folder is selected in TreeView
+  //it is used by ListView, as it updates every time a new folder is selected
+  */
   return (
   <>
     <h1>Hello world! 😊</h1>
@@ -70,3 +78,6 @@ function App() {
   );
 }
 export default App;
+//<DynamicTree id="1" name="Applications" /> {/* id and name is the "root" node */}
+//TreeView setExpanded guide:
+//https://stackoverflow.com/questions/57742324/how-to-programmatically-expand-or-collapse-tree-item-in-material-ui
